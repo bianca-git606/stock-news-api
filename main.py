@@ -62,7 +62,7 @@ if abs(dif_percentage) >= 5:
         msg = article.encode('ascii', 'ignore').decode('ascii')
 
         with smtplib.SMTP("smtp.gmail.com") as connection:
-            my_email = "sintercvnt@gmail.com"
+            my_email = os.environ.get("MY_EMAIL")
             password = os.environ.get("APP_KEY")
             # secures the connection
             connection.starttls()
